@@ -1,5 +1,5 @@
 function getWeather() {
-  const apiKey = config.MY_KEY;
+  apiKey = config.MY_KEY;
   const city = document.getElementById('city').value;
 
   if (!city) {
@@ -30,10 +30,9 @@ function getWeather() {
       alert('Error fetching hourly forecast data. Please try again.');
     });
 }
-
 function displayWeather(data) {
   const tempDataInfo = document.getElementById('temp-info');
-  const weatherDescription = document.getElementById('weather-info');
+  const weatherDescription = document.getElementById('weather-info'); // Ensure this ID matches your HTML
   const weatherIcon = document.getElementById('weather-icon');
   const hourlyForecastDiv = document.getElementById('hourly-forecast');
 
@@ -61,7 +60,7 @@ function displayWeather(data) {
         `;
 
     tempDataInfo.innerHTML = temperatureHTML;
-    weatherDataInfo.innerHTML = weatherHtml;
+    weatherDescription.innerHTML = weatherHtml; // Fixed here
     weatherIcon.src = iconUrl;
     weatherIcon.alt = description;
 
